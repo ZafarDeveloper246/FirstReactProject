@@ -1,12 +1,15 @@
 import Navbar from './components/Navbar'
-
+import Hero from "./components/Hero"
+import Cards from './components/Cards';
+import 'animate.css';
 function App() {
 
-  console.log("asdcs");
+  
   return (
     <>
-    <Navbar/>
- <h1>Arslan Akmal</h1>
+<Navbar/>
+<Hero/>
+<Cards/>
  </>
   );
 }
