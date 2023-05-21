@@ -2,6 +2,7 @@ import {useState,useEffect} from "react"
 import "./Cards.css"
 import axios from "axios"
 import {useParams,Link} from "react-router-dom"
+import CardsDetails from "./CardsDetails"
 
 
 function Cards() {
@@ -24,18 +25,20 @@ const params=useParams();
     {
         apiData.map((item)=>{
             return(
-                <div class="card" style={{width: "18rem"}}>
+ <div class="card" style={{width: "18rem"}}>
                 
-  <img src={item.image} class="card-img-top" style={{width:"50%",height:"200px"}} alt="..."/>
-  <div class="card-body">
-    <h5 class="card-title">{item.title.slice(0,5)}</h5>
-    <p class="card-text">{item.description.slice(0,50)}</p>
-    <Link to={`/products/${item.id}`} class="btn btn-primary">Rs{item.price}</Link>
-  </div>
-</div>
+                <img src={item.image} class="card-img-top" style={{width:"50%",height:"200px"}} alt="..."/>
+                <div class="card-body">
+                  <h5 class="card-title">{item.title}</h5>
+                  <p class="card-text">{item.description.slice(0,50)}</p>
+                  <Link to={`/products/${item.id}`} class="btn btn-primary">Rs{item.price}</Link>
+     
+    </div>
+    </div>
             )
         })
     }
+    
     </div>
     </>
   )
